@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2018_11_26_110235) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "items", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.decimal "price", precision: 2, scale: 2
+    t.decimal "price", precision: 3, scale: 2
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
